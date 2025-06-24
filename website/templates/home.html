@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ info.first_name }} Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static '/styles.css' %}" />
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="/education">Education</a></li>
+      <li><a href="#">Experiance</a></li>
+      <li><a href="#">Contact me</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="intro fade-in">
+      <h1>Hi I’m {{ info }}</h1>
+      <p>
+        {{ info.description}}
+      </p>
+      <button>Contact me</button>
+
+      <div class="social-icons">
+        <a href="{{ info.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="{{ info.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="profile-pic">
+      <img src="{{ info.picture}}" alt="Profile Picture" />
+    </div>
+  </div>
+
+</body>
+</html>
