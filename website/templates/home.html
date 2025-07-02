@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +13,7 @@
     <ul>
       <li><a href="#" class="active">Home</a></li>
       <li><a href="/education">Education</a></li>
-      <li><a href="#">Experiance</a></li>
+      <li><a href="#">Experience</a></li>
       <li><a href="#">Contact me</a></li>
     </ul>
   </nav>
@@ -22,19 +21,15 @@
   <div class="container">
     <div class="intro fade-in">
       <h1>Hi I’m {{ info }}</h1>
-      <p>
-        {{ info.description}}
-      </p>
+      <p>{{ info.description}}</p>
       <button>Contact me</button>
-
       <div class="social-icons">
         <a href="{{ info.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
         <a href="{{ info.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
       </div>
-    </div>
-
-    <div class="profile-pic">
-      <img src="{{ info.picture}}" alt="Profile Picture" />
+      <div class="profile-pic">
+        <img src="{{ info.picture}}" alt="Profile Picture" />
+      </div>
     </div>
   </div>
 

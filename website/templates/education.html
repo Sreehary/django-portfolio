@@ -1,12 +1,12 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ info.first_name }} Portfolio</title>
+  <title>Education</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="{% static '/styles.css' %}" />
+  <link rel="stylesheet" href="{% static '/education.css' %}" />
 </head>
 <body>
 
@@ -14,14 +14,25 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="#" class="active">Education</a></li>
-      <li><a href="#">Experiance</a></li>
+      <li><a href="#">Experience</a></li>
       <li><a href="#">Contact me</a></li>
     </ul>
   </nav>
 
-  <div class="container">
-    
-  </div>
-
+<div class="intro fade-in">
+    <div class="heading">Education</div>
+      <div class="education-list">
+        {% for edu in educations %}
+        <div class="education-item">
+          <div class="education-header">
+            <div class="deg"><i class="fas fa-user-graduate fa-sm" style="margin-right: 10px; color: #ff5e00;"></i>{{ edu.degree }}</div>
+            <span class="education-years">{{ edu.start_date|date:"F Y" }} - {{ edu.end_date|date:"F Y" }}</span>
+          </div>
+          <div class="spec">{{ edu.specialization }}</div>
+          <div class="deg"><i class="fa fa-university fa-sm" style="margin-right: 10px; color: #ff5e00;"></i>{{ edu.university}}</div>
+        </div>
+        {% endfor %}
+    </div>
+ </div>
 </body>
 </html>
